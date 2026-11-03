@@ -17,8 +17,8 @@
 
 ## 运行时依赖
 
-- `maimai-drawpic-plugin`：通过正式 v2 API 生成和恢复配图任务。
-- `org.orge-8.life-frequency`：通过只读 API 获取生活轨迹。
+- 自建生图 API（`image_generation.py`）：直接调 OpenAI 兼容 `/images/generations`，可用 MaiBot 主配置的「画图」provider 或单独填中转站，不依赖 `maimai-drawpic-plugin`。
+- `org.orge-8.life-frequency`：通过其状态文件 `life_state.json` 获取生活轨迹（该插件无 `get_current_context` API）。
 - `org.mai-mai.self-identity`：通过只读 API 获取默认身份参考图。
 
 主动运营策略、maibot 内容边界、SQLite 状态、幂等发送、配额、冷却、回读核验和小黑盒业务流程均由本项目独立实现。
